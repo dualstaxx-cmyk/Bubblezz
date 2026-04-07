@@ -7,6 +7,13 @@ export const metadata: Metadata = {
   title: "Contact Us",
   description:
     "Get in touch with Bubblezz. Chat with us on WhatsApp, send a message, or visit us in Pune, Maharashtra.",
+  alternates: { canonical: "https://bubblezz.pages.dev/contact" },
+  openGraph: {
+    title: "Contact Us – Bubblezz Personal Care",
+    description: "Chat with our team on WhatsApp, send a message, or visit us in Pune. We reply within 1 hour.",
+    url: "https://bubblezz.pages.dev/contact",
+    images: ["/categories/skincare.jpeg"],
+  },
 };
 
 const WHATSAPP_NUMBER = "917XXXXXXXXXX";
@@ -57,12 +64,11 @@ export default function ContactPage() {
           <div className="hidden md:block bg-gray-50 p-8 rounded-2xl">
             <div className="relative w-full aspect-[5/4]">
               <Image
-                src="https://placehold.co/500x400/FAF7F2/1a1a1a?text=Bubblezz+Collection"
-                alt="Bubblezz Products"
+                src="/categories/skincare.jpeg"
+                alt="Bubblezz natural skin care collection"
                 fill
-                className="object-contain rounded-2xl"
+                className="object-cover rounded-2xl"
                 loading="lazy"
-                unoptimized
               />
             </div>
           </div>

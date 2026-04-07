@@ -21,9 +21,14 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://bubblezz.pages.dev"),
   title: {
     default: "Bubblezz | Fresh & Refreshing Personal Care",
     template: "%s | Bubblezz",
+  },
+  icons: {
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
   },
   description:
     "Premium personal care products by Amulya Pharmaceuticals. Skin care, hair care, baby care and home care products. Natural ingredients. Dermatologist tested.",
@@ -37,11 +42,18 @@ export const metadata: Metadata = {
     "personal care Pune",
   ],
   openGraph: {
-    images: ["https://placehold.co/1200x630/1a1a1a/C9A84C?text=Bubblezz+Personal+Care"],
+    images: ["/categories/skincare.jpeg"],
     title: "Bubblezz | Fresh & Refreshing Personal Care",
     description:
       "Premium personal care products. Natural ingredients. Dermatologist tested.",
     type: "website",
+    siteName: "Bubblezz Personal Care",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Bubblezz | Fresh & Refreshing Personal Care",
+    description: "Premium personal care products. Natural ingredients. Dermatologist tested.",
+    images: ["/categories/skincare.jpeg"],
   },
 };
 

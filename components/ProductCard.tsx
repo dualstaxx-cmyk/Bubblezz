@@ -28,12 +28,11 @@ export default function ProductCard({ product, variant }: Props) {
             className="w-full object-cover rounded-lg"
             loading="lazy"
             onError={(e) => {
-              const target = e.target as HTMLImageElement;
-              target.src = `https://placehold.co/400x500/F0EBE1/1a1a1a?text=${encodeURIComponent(product.name)}`;
+              (e.target as HTMLImageElement).src = "/categories/skincare.jpeg";
             }}
           />
           {product.badge && (
-            <span className="absolute top-3 left-3 bg-cream text-brand-black text-[10px] uppercase tracking-wider font-body px-2 py-1 rounded-full">
+            <span className="absolute top-3 left-3 bg-gold text-white text-[10px] uppercase tracking-wider font-body px-2.5 py-1 rounded-full">
               {product.badge}
             </span>
           )}
@@ -41,7 +40,7 @@ export default function ProductCard({ product, variant }: Props) {
         <p className="font-body font-semibold text-brand-black text-base md:text-lg mt-3">
           {product.name}
         </p>
-        <p className="text-gray-500 text-sm mt-1 leading-relaxed">
+        <p className="text-gray-500 text-sm mt-1 leading-relaxed line-clamp-2">
           {product.description}
         </p>
         <button
@@ -64,8 +63,7 @@ export default function ProductCard({ product, variant }: Props) {
           className="object-contain p-4"
           loading="lazy"
           onError={(e) => {
-            const target = e.target as HTMLImageElement;
-            target.src = `https://placehold.co/400x400/FAF7F2/1a1a1a?text=${encodeURIComponent(product.name)}`;
+            (e.target as HTMLImageElement).src = "/categories/skincare.jpeg";
           }}
         />
         {product.badge && (

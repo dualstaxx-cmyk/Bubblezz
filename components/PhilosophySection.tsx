@@ -27,10 +27,17 @@ export default function PhilosophySection() {
           integrity. Our formulations are crafted through patient, mindful
           processes that respect both your body and the environment.
         </p>
+        <p className="text-gray-600 font-body text-sm mt-3 max-w-sm leading-relaxed">
+          Every ingredient is hand-selected — cold-pressed botanicals, sustainably
+          sourced actives, and time-honoured Ayurvedic extracts. We never cut
+          corners: no parabens, no sulfates, no compromise. Just honest care,
+          backed by science and rooted in nature.
+        </p>
         <ul className="mt-4 flex flex-col gap-2">
           {[
             "Ethical, clean, and uncompromising ingredients",
             "Elevated personal care for the modern individual",
+            "Dermatologist tested — safe for all skin types",
           ].map((point) => (
             <li key={point} className="flex items-start gap-2 font-body text-sm text-gray-600">
               <span className="w-1.5 h-1.5 rounded-full bg-gold mt-1.5 flex-shrink-0" />

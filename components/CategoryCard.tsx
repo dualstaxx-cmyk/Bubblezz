@@ -23,10 +23,10 @@ export default function CategoryCard({ category, className = "" }: Props) {
           className="object-cover transition-transform duration-500 group-hover:scale-105"
           loading="lazy"
           onError={(e) => {
-            (e.target as HTMLImageElement).src = `https://placehold.co/600x400/1a1a1a/C9A84C?text=${encodeURIComponent(category.label)}`;
+            (e.target as HTMLImageElement).src = "/categories/skincare.jpeg";
           }}
         />
-        <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-all duration-300" />
+        <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 group-hover:bg-[rgba(201,168,76,0.15)] transition-all duration-300" />
         <div className="absolute bottom-4 left-4">
           <p className="font-display text-white text-xl font-semibold">
             {category.label}

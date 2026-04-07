@@ -7,6 +7,13 @@ export const metadata: Metadata = {
   title: "Our Story",
   description:
     "Born in Pune, made for India. Discover the Bubblezz story — premium personal care rooted in botanical intelligence and ethical formulation.",
+  alternates: { canonical: "https://bubblezz.pages.dev/about" },
+  openGraph: {
+    title: "Our Story – Bubblezz Personal Care",
+    description: "Born in Pune, made for India. Botanical intelligence, purity without compromise.",
+    url: "https://bubblezz.pages.dev/about",
+    images: ["/categories/skincare.jpeg"],
+  },
 };
 
 export default function AboutPage() {
@@ -62,6 +69,41 @@ export default function AboutPage() {
 
           {/* Right — value cards */}
           <ValuesGrid />
+        </div>
+      </section>
+
+      {/* Ingredient Philosophy */}
+      <section className="bg-white py-12 md:py-20 px-4 md:px-16">
+        <div className="max-w-4xl mx-auto">
+          <p className="text-gold text-xs uppercase tracking-widest font-body font-semibold">
+            What Goes Inside
+          </p>
+          <h2 className="font-display text-brand-black text-headline-lg font-bold mt-2 leading-tight">
+            Ingredient Integrity,<br />Every Single Batch
+          </h2>
+          <p className="font-body text-gray-600 text-sm mt-6 leading-relaxed max-w-2xl">
+            We reject the shortcut. Every Bubblezz formula begins with an obsessive search for the right
+            ingredient — not just any argan, but cold-pressed Moroccan argan; not just neem, but sustainably
+            harvested neem from certified Indian farms. We maintain full traceability across our supply chain
+            because we believe you deserve to know exactly what touches your skin.
+          </p>
+          <p className="font-body text-gray-600 text-sm mt-4 leading-relaxed max-w-2xl">
+            Our lab in Pune operates under strict GMP (Good Manufacturing Practice) guidelines. Small batch
+            sizes aren&apos;t a marketing phrase for us — they&apos;re how we maintain freshness, potency,
+            and quality control that large-scale manufacturing simply cannot offer.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-10">
+            {[
+              { label: "No Parabens", desc: "Zero synthetic preservatives that disrupt hormones." },
+              { label: "No Sulfates", desc: "Gentle cleansers that never strip your skin's natural barrier." },
+              { label: "Cruelty-Free", desc: "Never tested on animals. Certified ethical at every step." },
+            ].map(({ label, desc }) => (
+              <div key={label} className="border-l-2 border-gold pl-4">
+                <p className="font-body font-semibold text-brand-black text-sm">{label}</p>
+                <p className="font-body text-gray-500 text-xs mt-1 leading-relaxed">{desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

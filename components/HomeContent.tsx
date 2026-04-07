@@ -70,17 +70,12 @@ export default function HomeContent() {
           >
             <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(201,168,76,0.15)_0%,transparent_70%)]" />
             <Image
-              src="https://placehold.co/600x500/1a1a1a/C9A84C?text=Bubblezz"
-              alt="Bubblezz Premium Personal Care"
+              src="/categories/skincare.jpeg"
+              alt="Bubblezz Premium Skin Care Collection — natural botanical products"
               fill
-              className="object-contain"
+              className="object-cover rounded-2xl"
               priority
               sizes="(max-width: 768px) 100vw, 50vw"
-              onError={(e) => {
-                const t = e.currentTarget;
-                t.src =
-                  "https://placehold.co/600x500/1a1a1a/C9A84C?text=Bubblezz+Personal+Care";
-              }}
             />
           </motion.div>
         </div>

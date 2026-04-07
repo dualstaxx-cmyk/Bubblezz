@@ -7,6 +7,13 @@ export const metadata: Metadata = {
   title: "FAQ",
   description:
     "Frequently asked questions about Bubblezz personal care products, ingredients, orders, returns, and shipping.",
+  alternates: { canonical: "https://bubblezz.pages.dev/faq" },
+  openGraph: {
+    title: "FAQ – Bubblezz Personal Care",
+    description: "Answers to common questions about Bubblezz products, ingredients, WhatsApp ordering, returns, and shipping across India.",
+    url: "https://bubblezz.pages.dev/faq",
+    images: ["/categories/skincare.jpeg"],
+  },
 };
 
 export default function FaqPage() {
