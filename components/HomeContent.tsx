@@ -77,21 +77,23 @@ export default function HomeContent() {
             </motion.div>
           </motion.div>
 
-          {/* Right — hero bottle image */}
+          {/* Right — hero bottle image in white card frame */}
           <motion.div
             variants={fadeUp}
             initial="hidden"
             animate="visible"
-            className="relative h-[300px] sm:h-[420px] md:h-[600px] order-1 md:order-2 rounded-[20px] overflow-hidden"
+            className="relative h-[300px] sm:h-[420px] md:h-[600px] order-1 md:order-2 rounded-[20px] bg-[#F5F0EA] p-3 md:p-5"
           >
-            <Image
-              src="/hero-bottle.jpeg"
-              alt="Bubblezz Premium Botanical Serum — signature formula"
-              fill
-              className="object-cover object-center"
-              priority
-              sizes="(max-width: 768px) 100vw, 50vw"
-            />
+            <div className="relative h-full w-full rounded-[14px] overflow-hidden">
+              <Image
+                src="/hero-bottle.jpeg"
+                alt="Bubblezz Premium Botanical Serum — signature formula"
+                fill
+                className="object-contain"
+                priority
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </div>
           </motion.div>
         </div>
       </section>
