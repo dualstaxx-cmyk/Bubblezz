@@ -82,13 +82,14 @@ export default function HomeContent() {
             variants={fadeUp}
             initial="hidden"
             animate="visible"
-            className="relative h-[300px] sm:h-[420px] md:h-[600px] order-1 md:order-2 rounded-[20px] overflow-hidden"
+            className="relative h-[300px] sm:h-[420px] md:h-[600px] order-1 md:order-2 rounded-[20px] overflow-hidden flex items-center justify-center"
+            style={{ background: "linear-gradient(150deg, #c8820a 0%, #e8a020 45%, #b06808 100%)" }}
           >
             <Image
               src="/hero-bottle.jpeg"
               alt="Bubblezz Premium Botanical Serum — signature formula"
               fill
-              className="object-cover object-center"
+              className="object-contain p-6 md:p-10"
               priority
               sizes="(max-width: 768px) 100vw, 50vw"
             />
