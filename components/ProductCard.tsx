@@ -17,15 +17,22 @@ export default function ProductCard({ product, variant }: Props) {
   };
 
   if (variant === "shop") {
+    const categoryLabel: Record<string, string> = {
+      skincare: "Skin Care",
+      haircare: "Hair Care",
+      babycare: "Baby Care",
+      homecare: "Home Care",
+    };
+
     return (
-      <div className="break-inside-avoid mb-6">
-        <div className="relative w-full rounded-lg overflow-hidden bg-cream-dark">
+      <div className="group flex flex-col">
+        {/* Image */}
+        <div className="relative w-full aspect-[3/4] rounded-[12px] overflow-hidden bg-cream-dark">
           <Image
             src={product.image}
             alt={product.name}
-            width={400}
-            height={500}
-            className="w-full object-cover rounded-lg"
+            fill
+            className="object-cover group-hover:scale-[1.03] transition-transform duration-500"
             loading="lazy"
             onError={(e) => {
               (e.target as HTMLImageElement).src = "/categories/skincare.jpeg";
@@ -37,18 +44,23 @@ export default function ProductCard({ product, variant }: Props) {
             </span>
           )}
         </div>
-        <p className="font-body font-semibold text-brand-black text-base md:text-lg mt-3">
-          {product.name}
-        </p>
-        <p className="text-gray-500 text-sm mt-1 leading-relaxed line-clamp-2">
-          {product.description}
-        </p>
-        <button
-          onClick={handleWhatsApp}
-          className="mt-3 text-brand-black text-xs tracking-widest font-body border-b border-transparent hover:border-gold transition-all duration-300 pb-0.5 uppercase"
-        >
-          WHATSAPP ENQUIRY →
-        </button>
+
+        {/* Info */}
+        <div className="mt-4 flex flex-col gap-1">
+          <p className="text-gold text-[10px] uppercase tracking-[0.2em] font-body font-semibold">
+            {categoryLabel[product.category] ?? product.category}
+          </p>
+          <p className="font-display text-brand-black text-xl md:text-2xl leading-snug">
+            {product.name}
+          </p>
+          <button
+            onClick={handleWhatsApp}
+            className="mt-3 flex items-center gap-2 text-brand-black font-body text-xs uppercase tracking-widest hover:text-gold transition-colors duration-300 group/btn self-start"
+          >
+            <span>Enquire on WhatsApp</span>
+            <span className="group-hover/btn:translate-x-1 transition-transform duration-300">→</span>
+          </button>
+        </div>
       </div>
     );
   }

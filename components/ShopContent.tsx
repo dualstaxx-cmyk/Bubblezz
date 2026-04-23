@@ -40,28 +40,29 @@ export default function ShopContent() {
 
   return (
     <div className="bg-cream min-h-screen">
-      {/* Header */}
-      <div className="px-4 md:px-16 pt-12 md:pt-16 pb-8">
+      {/* ── HEADER ── */}
+      <div className="px-6 md:px-16 pt-16 md:pt-24 pb-10 border-b border-[#e8e0d5]">
         <motion.div variants={fadeUp} initial="hidden" animate="visible">
-          <p className="text-gold text-xs uppercase tracking-widest font-body font-semibold">
-            The Curator&apos;s Collection
+          <p className="text-gold text-xs uppercase tracking-[0.25em] font-body font-semibold">
+            The Full Collection
           </p>
-          <h1 className="font-display text-brand-black text-4xl md:text-display-md mt-1">
-            Our Products
+          <h1 className="font-display text-brand-black leading-tight mt-3 text-[clamp(2.25rem,4.5vw,4rem)]">
+            Curated for the<br />
+            <span className="italic font-normal">Discerning Palette.</span>
           </h1>
         </motion.div>
 
-        {/* Category tabs — horizontal scroll on mobile */}
-        <div className="overflow-x-auto -mx-4 px-4 md:mx-0 md:px-0 mt-6 scrollbar-hide">
-          <div className="flex gap-4 md:gap-6 md:flex-wrap pb-2">
+        {/* Category tabs */}
+        <div className="overflow-x-auto -mx-6 px-6 md:mx-0 md:px-0 mt-8 scrollbar-hide">
+          <div className="flex gap-8 md:gap-10 pb-1">
             {TABS.map(({ id, label }) => (
               <button
                 key={id}
                 onClick={() => setActiveCategory(id)}
-                className={`whitespace-nowrap font-body text-sm pb-1 transition-all duration-300 ${
+                className={`whitespace-nowrap font-body text-xs uppercase tracking-[0.15em] pb-2 transition-all duration-300 ${
                   activeCategory === id
-                    ? "text-gold font-semibold border-b-2 border-gold"
-                    : "text-gray-500 hover:text-gold border-b-2 border-transparent"
+                    ? "text-brand-black font-semibold border-b border-brand-black"
+                    : "text-gray-400 hover:text-brand-black border-b border-transparent"
                 }`}
               >
                 {label}
@@ -71,8 +72,8 @@ export default function ShopContent() {
         </div>
       </div>
 
-      {/* Product masonry grid */}
-      <div className="px-4 md:px-16 pb-20">
+      {/* ── PRODUCT GRID ── */}
+      <div className="px-6 md:px-16 py-12 md:py-16">
         <AnimatePresence mode="wait">
           {filtered.length === 0 ? (
             <motion.div
@@ -93,15 +94,14 @@ export default function ShopContent() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="columns-1 sm:columns-2 lg:columns-3 gap-6"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12"
             >
               {filtered.map((product, i) => (
                 <motion.div
                   key={product.id}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 24 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.05, duration: 0.4 }}
-                  className="break-inside-avoid"
                 >
                   <ProductCard product={product} variant="shop" />
                 </motion.div>
