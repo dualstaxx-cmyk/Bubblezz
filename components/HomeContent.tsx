@@ -17,9 +17,10 @@ export default function HomeContent() {
   return (
     <>
       {/* ── HERO ── */}
-      <section className="min-h-screen bg-brand-black">
-        <div className="grid grid-cols-1 md:grid-cols-2 items-center px-4 md:px-16 gap-6 md:gap-12 py-12 md:py-20 min-h-screen">
-          {/* Left — text, order-2 on mobile (image shows first) */}
+      <section className="min-h-screen bg-cream flex items-center">
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 items-center px-6 md:px-16 gap-8 md:gap-16 py-20 md:py-0 min-h-screen">
+
+          {/* Left — editorial text */}
           <motion.div
             variants={heroStagger}
             initial="hidden"
@@ -28,52 +29,66 @@ export default function HomeContent() {
           >
             <motion.p
               variants={fadeUp}
-              className="text-gold uppercase tracking-widest text-xs font-body font-semibold"
+              className="text-gold uppercase tracking-[0.25em] text-xs font-body font-semibold"
             >
-              Premium Personal Care
+              The Art of the Effervescent
             </motion.p>
             <motion.h1
               variants={fadeUp}
-              className="font-display text-white text-4xl md:text-display-md lg:text-display-lg leading-tight mt-3"
+              className="font-display text-brand-black mt-4 leading-[1.05] text-[clamp(2.75rem,5.5vw,5rem)]"
             >
-              Unlock Your Natural Beauty
+              Unlock Your<br />
+              <span className="italic font-normal">Natural</span>{" "}
+              Beauty.
             </motion.h1>
             <motion.p
               variants={fadeUp}
-              className="text-gray-400 font-body text-sm md:text-base max-w-sm mt-4 leading-relaxed"
+              className="text-gray-500 font-body text-sm md:text-base max-w-sm mt-5 leading-relaxed"
             >
-              Fresh. Refreshing. Honest. Crafted for your skin&apos;s unique
-              journey using only nature&apos;s finest ingredients.
+              Elevate your daily ritual with botanical infusions designed for
+              cellular vitality and timeless radiance.
             </motion.p>
-            <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-3 mt-8">
+
+            {/* Social proof */}
+            <motion.div variants={fadeUp} className="flex items-center gap-3 mt-5">
+              <div className="flex gap-0.5">
+                {[1, 2, 3, 4, 5].map((i) => (
+                  <span key={i} className="text-gold text-xs">★</span>
+                ))}
+              </div>
+              <span className="text-gray-400 font-body text-xs">
+                4.9 · 2,000+ customers · Dermatologist Tested
+              </span>
+            </motion.div>
+
+            <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4 mt-10">
               <Link
                 href="/shop"
-                className="bg-gold text-brand-black rounded-full px-6 py-3 font-body font-semibold hover:bg-gold-dark transition-colors duration-300 w-full sm:w-auto text-center justify-center"
+                className="bg-brand-black text-white px-8 py-3.5 font-body font-medium text-xs tracking-widest uppercase hover:bg-gold hover:text-brand-black transition-colors duration-300 text-center"
               >
-                Explore Now
+                Explore Collections →
               </Link>
               <Link
                 href="/about"
-                className="border border-white text-white rounded-full px-6 py-3 font-body hover:bg-white/10 transition-colors duration-300 w-full sm:w-auto text-center justify-center"
+                className="text-brand-black font-body text-sm py-3.5 text-center underline underline-offset-4 hover:text-gold transition-colors duration-300"
               >
-                Our Story
+                Discover the Ritual
               </Link>
             </motion.div>
           </motion.div>
 
-          {/* Right — hero image, order-1 on mobile (shows above text) */}
+          {/* Right — hero bottle image */}
           <motion.div
             variants={fadeUp}
             initial="hidden"
             animate="visible"
-            className="relative h-64 sm:h-80 md:h-[500px] order-1 md:order-2"
+            className="relative h-[300px] sm:h-[420px] md:h-[600px] order-1 md:order-2 rounded-[20px] overflow-hidden"
           >
-            <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(201,168,76,0.15)_0%,transparent_70%)]" />
             <Image
-              src="/categories/skincare.jpeg"
-              alt="Bubblezz Premium Skin Care Collection — natural botanical products"
+              src="/hero-bottle.jpeg"
+              alt="Bubblezz Premium Botanical Serum — signature formula"
               fill
-              className="object-cover rounded-2xl"
+              className="object-cover object-center"
               priority
               sizes="(max-width: 768px) 100vw, 50vw"
             />
@@ -85,68 +100,120 @@ export default function HomeContent() {
       <TrustStrip />
 
       {/* ── CURATED COLLECTIONS ── */}
-      <section className="bg-cream py-12 md:py-20 px-4 md:px-16">
-        <div className="flex flex-col gap-2 md:flex-row md:justify-between md:items-end mb-10">
+      <section className="bg-cream py-20 md:py-28 px-6 md:px-16">
+        <div className="flex flex-col gap-3 md:flex-row md:justify-between md:items-end mb-14">
           <div>
-            <p className="text-gold text-xs uppercase tracking-widest font-body font-semibold">
-              Shop By Need
-            </p>
-            <h2 className="font-display text-brand-black text-headline-lg font-bold mt-1">
-              Curated Collections
+            <h2 className="font-display text-brand-black leading-tight text-[clamp(2rem,4vw,3.5rem)]">
+              Curated for the<br />
+              <span className="italic font-normal">discerning palette.</span>
             </h2>
           </div>
           <Link
             href="/shop"
-            className="text-gold font-body text-sm hover:underline decoration-gold self-start md:self-auto"
+            className="text-brand-black font-body text-xs uppercase tracking-widest hover:text-gold transition-colors underline underline-offset-4 self-start md:self-auto"
           >
-            View All →
+            View All Categories →
           </Link>
         </div>
 
-        {/* Asymmetric grid — desktop: 3-col 2-row; mobile: 2-col simple */}
+        {/* Desktop asymmetric grid */}
         <div className="hidden md:grid md:grid-cols-3 md:grid-rows-2 gap-4 h-[600px]">
-          {/* Skin Care — tall left col, rows 1-2 */}
           <div className="col-span-1 row-span-2">
             <CategoryCard category={CATEGORIES[0]} className="h-full" />
           </div>
-          {/* Hair Care — top middle (col 2, row 1) */}
           <div className="col-span-1 row-span-1">
             <CategoryCard category={CATEGORIES[1]} className="h-full" />
           </div>
-          {/* Baby Care — top right (col 3, row 1) */}
           <div className="col-span-1 row-span-1">
             <CategoryCard category={CATEGORIES[2]} className="h-full" />
           </div>
-          {/* Home Care — wide bottom right (cols 2-3, row 2) */}
           <div className="col-span-2 row-span-1">
             <CategoryCard category={CATEGORIES[3]} className="h-full" />
           </div>
         </div>
 
-        {/* Mobile: simple 2×2 grid */}
+        {/* Mobile 2×2 grid */}
         <div className="grid grid-cols-2 gap-3 h-[500px] md:hidden">
           {CATEGORIES.map((cat) => (
-            <div key={cat.id} className="">
+            <div key={cat.id}>
               <CategoryCard category={cat} className="h-full" />
             </div>
           ))}
         </div>
       </section>
 
-      {/* ── BESTSELLERS ── */}
-      <section className="bg-white py-12 md:py-20 px-4 md:px-16">
+      {/* ── THE GOLDEN ELIXIR (Dark Feature Spotlight) ── */}
+      <section className="bg-brand-black py-20 md:py-28 px-6 md:px-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <p className="text-gold uppercase tracking-[0.25em] text-xs font-body font-semibold">
+              Signature Formula
+            </p>
+            <h2 className="font-display text-white leading-tight mt-4 text-[clamp(2.5rem,4vw,4rem)]">
+              The Golden<br />
+              <span className="italic font-normal">Elixir.</span>
+            </h2>
+            <p className="text-gray-400 font-body text-sm md:text-base max-w-md mt-6 leading-relaxed">
+              Sourced from nature&apos;s finest botanicals, our signature blend is
+              cold-pressed to preserve its vital effervescence, delivering
+              uncompromised purity to your daily ritual.
+            </p>
+            <Link
+              href="/shop"
+              className="inline-block mt-10 border border-gold text-gold font-body text-xs uppercase tracking-widest px-8 py-3.5 hover:bg-gold hover:text-brand-black transition-all duration-300"
+            >
+              Discover the Product →
+            </Link>
+          </motion.div>
+
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="flex justify-center md:justify-end"
+          >
+            <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden bg-[#111]">
+              <Image
+                src="/products/bath-salts.jpeg"
+                alt="Bubblezz Lavender Bath Salt — The Golden Elixir"
+                fill
+                className="object-cover"
+                sizes="320px"
+              />
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── THE ICONS (Bestsellers) ── */}
+      <section className="bg-white py-20 md:py-28 px-6 md:px-16">
         <motion.div
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
+          className="flex flex-col gap-2 md:flex-row md:justify-between md:items-end mb-14"
         >
-          <p className="text-gold text-xs uppercase tracking-widest font-body font-semibold">
-            Customer Favourites
-          </p>
-          <h2 className="font-display text-brand-black text-headline-lg font-bold mt-1">
-            Our Bestsellers
-          </h2>
+          <div>
+            <p className="text-gold text-xs uppercase tracking-[0.25em] font-body font-semibold">
+              Customer Favourites
+            </p>
+            <h2 className="font-display text-brand-black leading-tight mt-2 text-[clamp(2rem,4vw,3.5rem)]">
+              The Icons.
+            </h2>
+          </div>
+          <Link
+            href="/shop"
+            className="text-brand-black font-body text-xs uppercase tracking-widest hover:text-gold transition-colors underline underline-offset-4 self-start md:self-auto"
+          >
+            Explore Collection →
+          </Link>
         </motion.div>
 
         <motion.div
@@ -154,7 +221,7 @@ export default function HomeContent() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mt-12"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8"
         >
           {bestsellers.map((product) => (
             <motion.div key={product.id} variants={fadeUp}>
@@ -162,15 +229,32 @@ export default function HomeContent() {
             </motion.div>
           ))}
         </motion.div>
+      </section>
 
-        <div className="flex justify-center mt-12">
-          <Link
-            href="/shop"
-            className="bg-brand-black text-white rounded-full px-8 py-3 font-body font-medium hover:bg-gold hover:text-black transition-all duration-300"
-          >
-            View All Products
-          </Link>
-        </div>
+      {/* ── PRESS QUOTE ── */}
+      <section className="bg-cream-dark py-20 md:py-28 px-6 md:px-16">
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="text-center max-w-3xl mx-auto"
+        >
+          <p className="font-display text-brand-black leading-relaxed italic text-[clamp(1.25rem,2.5vw,2rem)]">
+            &ldquo;A masterclass in botanical engineering. Bubblezz redefines
+            the luxury ritual with uncompromising purity.&rdquo;
+          </p>
+          <div className="flex items-center justify-center flex-wrap gap-6 md:gap-12 mt-12 opacity-30">
+            {["VOGUE", "BAZAAR", "ELLE", "VANITY FAIR"].map((pub) => (
+              <span
+                key={pub}
+                className="font-body text-brand-black text-xs md:text-sm uppercase tracking-[0.2em] font-bold"
+              >
+                {pub}
+              </span>
+            ))}
+          </div>
+        </motion.div>
       </section>
 
       {/* ── PHILOSOPHY ── */}
