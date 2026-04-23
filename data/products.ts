@@ -187,7 +187,7 @@ export const PRODUCTS: Product[] = [
     category: "haircare",
     description:
       "Henna-based hair colour enriched with amla and shikakai that covers grey naturally without ammonia.",
-    image: "https://placehold.co/400x500/1a1a1a/C9A84C?text=Natural+Hair+Colour",
+    image: "/products/natural-hair-colour.jpeg",
     badge: "NEW",
     whatsappMessage:
       "Hi, I'm interested in Natural Hair Colour from Bubblezz. Can you share more details?",
@@ -257,7 +257,7 @@ export const PRODUCTS: Product[] = [
     category: "homecare",
     description:
       "Natural aromatic solution with lavender and pine extracts for pristine, naturally fragrant floors.",
-    image: "https://placehold.co/400x500/E8F5E9/2E7D32?text=Floor+Cleaner",
+    image: "/products/floor-cleaner.jpeg",
     badge: "HANDCRAFTED",
     whatsappMessage:
       "Hi, I'm interested in Lavender Floor Cleaner from Bubblezz. Can you share more details?",
@@ -301,7 +301,7 @@ export const PRODUCTS: Product[] = [
     category: "homecare",
     description:
       "Powerful natural disinfectant with eucalyptus and tea tree that sanitizes without toxic bleach.",
-    image: "https://placehold.co/400x500/E8F5E9/2E7D32?text=Toilet+Cleaner",
+    image: "/products/toilet-cleaner.jpeg",
     badge: "HANDCRAFTED",
     whatsappMessage:
       "Hi, I'm interested in Botanical Toilet Cleaner from Bubblezz. Can you share more details?",
