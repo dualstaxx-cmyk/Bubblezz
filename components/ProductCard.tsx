@@ -27,12 +27,12 @@ export default function ProductCard({ product, variant }: Props) {
     return (
       <div className="group flex flex-col">
         {/* Image */}
-        <div className="relative w-full aspect-[3/4] rounded-[12px] overflow-hidden bg-cream-dark">
+        <div className="relative w-full aspect-[3/4] rounded-[12px] overflow-hidden bg-[#F5F0EA]">
           <Image
             src={product.image}
             alt={product.name}
             fill
-            className="object-cover group-hover:scale-[1.03] transition-transform duration-500"
+            className="object-contain p-5 group-hover:scale-[1.03] transition-transform duration-500"
             loading="lazy"
             onError={(e) => {
               (e.target as HTMLImageElement).src = "/categories/skincare.jpeg";
