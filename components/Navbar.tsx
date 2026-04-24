@@ -19,18 +19,34 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-40 bg-white border-b border-[#e8e0d5]">
-      <div className="flex justify-between items-center px-4 md:px-16 py-4">
-        {/* Logo */}
+    <nav className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-[#e8e0d5]">
+      {/* ── Mobile header ── */}
+      <div className="md:hidden flex items-center justify-between px-5 py-3.5">
+        <button
+          className="text-brand-black w-8"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+        >
+          {menuOpen ? <X size={22} /> : <Menu size={22} />}
+        </button>
         <Link
           href="/"
-          className="font-display font-bold text-lg md:text-xl text-brand-black tracking-tight"
+          className="font-display italic text-brand-black text-lg tracking-tight absolute left-1/2 -translate-x-1/2"
         >
           Bubblezz
         </Link>
+        <div className="w-8" />
+      </div>
 
-        {/* Desktop nav links */}
-        <div className="hidden md:flex items-center gap-8">
+      {/* ── Desktop header (unchanged) ── */}
+      <div className="hidden md:flex justify-between items-center px-16 py-4">
+        <Link
+          href="/"
+          className="font-display font-bold text-xl text-brand-black tracking-tight"
+        >
+          Bubblezz
+        </Link>
+        <div className="flex items-center gap-8">
           {NAV_LINKS.map(({ href, label }) => {
             const isActive = pathname === href;
             return (
@@ -48,25 +64,12 @@ export default function Navbar() {
             );
           })}
         </div>
-
-        {/* Desktop CTA */}
-        <div className="hidden md:block">
-          <Link
-            href="/shop"
-            className="bg-brand-black text-white rounded-full px-5 py-2 text-sm font-body hover:bg-gold hover:text-black transition-all duration-300"
-          >
-            Shop Now
-          </Link>
-        </div>
-
-        {/* Mobile hamburger */}
-        <button
-          className="md:hidden text-brand-black"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
+        <Link
+          href="/shop"
+          className="bg-brand-black text-white rounded-full px-5 py-2 text-sm font-body hover:bg-gold hover:text-black transition-all duration-300"
         >
-          {menuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+          Shop Now
+        </Link>
       </div>
 
       {/* Mobile dropdown */}

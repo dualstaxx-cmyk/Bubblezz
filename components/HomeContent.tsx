@@ -16,16 +16,70 @@ const bestsellers = PRODUCTS.filter((p) => p.badge === "BEST SELLER").slice(0, 3
 export default function HomeContent() {
   return (
     <>
-      {/* ── HERO ── */}
-      <section className="bg-cream flex items-center md:min-h-screen">
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 items-center px-5 md:px-16 gap-6 md:gap-16 py-10 md:py-0 md:min-h-screen">
+      {/* ── HERO — MOBILE ── */}
+      <section className="md:hidden bg-cream overflow-hidden">
+        <motion.div
+          variants={heroStagger}
+          initial="hidden"
+          animate="visible"
+          className="flex flex-col items-center"
+        >
+          {/* Centered heading */}
+          <motion.h1
+            variants={fadeUp}
+            className="font-display text-brand-black text-center leading-[1.1] text-[2.25rem] px-6 pt-5"
+          >
+            Unlock Your<br />
+            <span className="italic font-normal">Natural Beauty</span>
+          </motion.h1>
+
+          {/* Brand name */}
+          <motion.p
+            variants={fadeUp}
+            className="font-display italic text-gold text-lg tracking-wide mt-2"
+          >
+            Bubblezz
+          </motion.p>
+
+          {/* Full-bleed product image */}
+          <motion.div
+            variants={fadeUp}
+            className="relative w-full h-[400px] mt-4"
+          >
+            <Image
+              src="/hero-bottle.jpeg"
+              alt="Bubblezz Premium Botanical Serum — signature formula"
+              fill
+              className="object-cover"
+              priority
+              sizes="100vw"
+            />
+            {/* Gradient fade at bottom for CTA overlap */}
+            <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-cream/80 to-transparent" />
+          </motion.div>
+
+          {/* Single pill CTA overlapping image */}
+          <motion.div variants={fadeUp} className="px-6 w-full -mt-10 relative z-10 pb-5">
+            <Link
+              href="/shop"
+              className="block w-full bg-brand-black text-white rounded-full py-3.5 font-body font-medium text-[11px] tracking-[0.2em] uppercase text-center hover:bg-gold hover:text-brand-black transition-colors duration-300 shadow-lg"
+            >
+              Explore the Ritual
+            </Link>
+          </motion.div>
+        </motion.div>
+      </section>
+
+      {/* ── HERO — DESKTOP (unchanged) ── */}
+      <section className="hidden md:flex bg-cream items-center min-h-screen">
+        <div className="w-full grid grid-cols-2 items-center px-16 gap-16 min-h-screen">
 
           {/* Left — editorial text */}
           <motion.div
             variants={heroStagger}
             initial="hidden"
             animate="visible"
-            className="flex flex-col order-2 md:order-1"
+            className="flex flex-col"
           >
             <motion.p
               variants={fadeUp}
@@ -43,10 +97,10 @@ export default function HomeContent() {
             </motion.h1>
             <motion.p
               variants={fadeUp}
-              className="text-gray-500 font-body text-sm md:text-base max-w-sm mt-5 leading-relaxed"
+              className="text-gray-500 font-body text-base max-w-sm mt-5 leading-relaxed"
             >
-              <span className="md:hidden">Fresh. Refreshing. Honest. A curated collection of personal care essentials designed for the discerning individual.</span>
-              <span className="hidden md:inline">Elevate your daily ritual with botanical infusions designed for cellular vitality and timeless radiance.</span>
+              Elevate your daily ritual with botanical infusions designed for
+              cellular vitality and timeless radiance.
             </motion.p>
 
             {/* Social proof */}
@@ -61,7 +115,7 @@ export default function HomeContent() {
               </span>
             </motion.div>
 
-            <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-3 mt-8">
+            <motion.div variants={fadeUp} className="flex flex-row gap-3 mt-8">
               <Link
                 href="/shop"
                 className="bg-brand-black text-white px-8 py-3.5 font-body font-medium text-xs tracking-widest uppercase hover:bg-gold hover:text-brand-black transition-colors duration-300 text-center"
@@ -82,16 +136,16 @@ export default function HomeContent() {
             variants={fadeUp}
             initial="hidden"
             animate="visible"
-            className="relative h-[320px] sm:h-[380px] md:h-[600px] order-1 md:order-2 rounded-[16px] md:rounded-[20px] bg-[#F5F0EA] p-2.5 md:p-5"
+            className="relative h-[600px] rounded-[20px] bg-[#F5F0EA] p-5"
           >
-            <div className="relative h-full w-full rounded-[12px] md:rounded-[14px] overflow-hidden">
+            <div className="relative h-full w-full rounded-[14px] overflow-hidden">
               <Image
                 src="/hero-bottle.jpeg"
                 alt="Bubblezz Premium Botanical Serum — signature formula"
                 fill
                 className="object-contain"
                 priority
-                sizes="(max-width: 768px) 100vw, 50vw"
+                sizes="50vw"
               />
             </div>
           </motion.div>
