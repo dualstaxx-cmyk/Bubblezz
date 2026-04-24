@@ -1,4 +1,5 @@
 import Footer from "@/components/Footer";
+import MobileBottomNav from "@/components/MobileBottomNav";
 import Navbar from "@/components/Navbar";
 import WhatsAppFAB from "@/components/WhatsAppFAB";
 import type { Metadata } from "next";
@@ -77,6 +78,9 @@ export default function RootLayout({
         <Navbar />
         <main id="main-content">{children}</main>
         <Footer />
+        {/* Bottom spacer for mobile nav */}
+        <div className="h-16 md:hidden" />
+        <MobileBottomNav />
         <WhatsAppFAB />
       </body>
     </html>

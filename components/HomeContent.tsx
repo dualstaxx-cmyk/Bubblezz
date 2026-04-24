@@ -45,8 +45,8 @@ export default function HomeContent() {
               variants={fadeUp}
               className="text-gray-500 font-body text-sm md:text-base max-w-sm mt-5 leading-relaxed"
             >
-              Elevate your daily ritual with botanical infusions designed for
-              cellular vitality and timeless radiance.
+              <span className="md:hidden">Fresh. Refreshing. Honest. A curated collection of personal care essentials designed for the discerning individual.</span>
+              <span className="hidden md:inline">Elevate your daily ritual with botanical infusions designed for cellular vitality and timeless radiance.</span>
             </motion.p>
 
             {/* Social proof */}

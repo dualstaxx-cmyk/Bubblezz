@@ -100,7 +100,13 @@ export default function Footer() {
               </svg>
             </a>
           </div>
-          <p className="text-gray-500 text-xs font-body mt-4 leading-relaxed">
+          <a
+            href="#"
+            className="block md:hidden text-gray-400 text-xs font-body mt-3 hover:text-gold transition-colors duration-300"
+          >
+            Newsletter →
+          </a>
+          <p className="text-gray-500 text-xs font-body mt-3 md:mt-4 leading-relaxed">
             Mon–Sat, 9am–6pm IST
           </p>
         </div>

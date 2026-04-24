@@ -12,7 +12,7 @@ export default function WhatsAppFAB() {
   return (
     <motion.button
       type="button"
-      className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#25D366] flex items-center justify-center shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+      className="fixed bottom-20 right-4 md:bottom-6 md:right-6 z-50 w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#25D366] flex items-center justify-center shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
       animate={{ scale: [1, 1.08, 1] }}
       transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
       onClick={handleClick}
