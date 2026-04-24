@@ -41,7 +41,7 @@ export default function ShopContent() {
   return (
     <div className="bg-cream min-h-screen">
       {/* ── HEADER ── */}
-      <div className="px-6 md:px-16 pt-16 md:pt-24 pb-10 border-b border-[#e8e0d5]">
+      <div className="px-5 md:px-16 pt-12 md:pt-24 pb-8 md:pb-10 border-b border-[#e8e0d5]">
         <motion.div variants={fadeUp} initial="hidden" animate="visible">
           <p className="text-gold text-xs uppercase tracking-[0.25em] font-body font-semibold">
             The Full Collection
@@ -53,7 +53,7 @@ export default function ShopContent() {
         </motion.div>
 
         {/* Category tabs */}
-        <div className="overflow-x-auto -mx-6 px-6 md:mx-0 md:px-0 mt-8 scrollbar-hide">
+        <div className="overflow-x-auto -mx-5 px-5 md:mx-0 md:px-0 mt-6 md:mt-8 scrollbar-hide">
           <div className="flex gap-8 md:gap-10 pb-1">
             {TABS.map(({ id, label }) => (
               <button
@@ -73,7 +73,7 @@ export default function ShopContent() {
       </div>
 
       {/* ── PRODUCT GRID ── */}
-      <div className="px-6 md:px-16 py-12 md:py-16">
+      <div className="px-5 md:px-16 py-10 md:py-16">
         <AnimatePresence mode="wait">
           {filtered.length === 0 ? (
             <motion.div
@@ -94,7 +94,7 @@ export default function ShopContent() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12"
+              className="grid grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-8 md:gap-x-6 md:gap-y-12"
             >
               {filtered.map((product, i) => (
                 <motion.div

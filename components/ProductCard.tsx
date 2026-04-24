@@ -32,30 +32,30 @@ export default function ProductCard({ product, variant }: Props) {
             src={product.image}
             alt={product.name}
             fill
-            className="object-contain p-5 group-hover:scale-[1.03] transition-transform duration-500"
+            className="object-contain p-3 md:p-5 group-hover:scale-[1.03] transition-transform duration-500"
             loading="lazy"
             onError={(e) => {
               (e.target as HTMLImageElement).src = "/categories/skincare.jpeg";
             }}
           />
           {product.badge && (
-            <span className="absolute top-3 left-3 bg-gold text-white text-[10px] uppercase tracking-wider font-body px-2.5 py-1 rounded-full">
+            <span className="absolute top-2 left-2 md:top-3 md:left-3 bg-gold text-white text-[8px] md:text-[10px] uppercase tracking-wider font-body px-2 py-0.5 md:px-2.5 md:py-1 rounded-full">
               {product.badge}
             </span>
           )}
         </div>
 
         {/* Info */}
-        <div className="mt-4 flex flex-col gap-1">
-          <p className="text-gold text-[10px] uppercase tracking-[0.2em] font-body font-semibold">
+        <div className="mt-3 md:mt-4 flex flex-col gap-0.5 md:gap-1">
+          <p className="text-gold text-[9px] md:text-[10px] uppercase tracking-[0.2em] font-body font-semibold">
             {categoryLabel[product.category] ?? product.category}
           </p>
-          <p className="font-display text-brand-black text-xl md:text-2xl leading-snug">
+          <p className="font-display text-brand-black text-sm md:text-2xl leading-snug">
             {product.name}
           </p>
           <button
             onClick={handleWhatsApp}
-            className="mt-3 flex items-center gap-2 text-brand-black font-body text-xs uppercase tracking-widest hover:text-gold transition-colors duration-300 group/btn self-start"
+            className="mt-2 md:mt-3 flex items-center gap-1.5 md:gap-2 text-brand-black font-body text-[10px] md:text-xs uppercase tracking-widest hover:text-gold transition-colors duration-300 group/btn self-start"
           >
             <span>Enquire on WhatsApp</span>
             <span className="group-hover/btn:translate-x-1 transition-transform duration-300">→</span>

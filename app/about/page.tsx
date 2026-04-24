@@ -20,7 +20,7 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="bg-brand-black text-center py-16 md:py-32 px-4 md:px-16">
+      <section className="bg-brand-black text-center py-14 md:py-32 px-5 md:px-16">
         <p className="text-gold text-xs uppercase tracking-widest font-body font-semibold">
           Bubblezz Personal Care
         </p>
@@ -34,7 +34,7 @@ export default function AboutPage() {
       </section>
 
       {/* Mission */}
-      <section className="bg-cream py-12 md:py-20 px-4 md:px-16">
+      <section className="bg-cream py-10 md:py-20 px-5 md:px-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
           {/* Left — brand story */}
           <div>
@@ -73,7 +73,7 @@ export default function AboutPage() {
       </section>
 
       {/* Ingredient Philosophy */}
-      <section className="bg-white py-12 md:py-20 px-4 md:px-16">
+      <section className="bg-white py-10 md:py-20 px-5 md:px-16">
         <div className="max-w-4xl mx-auto">
           <p className="text-gold text-xs uppercase tracking-widest font-body font-semibold">
             What Goes Inside
@@ -111,7 +111,7 @@ export default function AboutPage() {
       <TrustStrip />
 
       {/* CTA */}
-      <section className="bg-brand-black text-center py-12 md:py-20 px-4 md:px-16">
+      <section className="bg-brand-black text-center py-10 md:py-20 px-5 md:px-16">
         <p className="text-gold text-xs uppercase tracking-widest font-body font-semibold">
           Start Your Journey
         </p>

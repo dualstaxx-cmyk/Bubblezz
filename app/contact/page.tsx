@@ -22,7 +22,7 @@ export default function ContactPage() {
   return (
     <div className="bg-cream min-h-screen">
       {/* ── HERO ── */}
-      <section className="px-4 md:px-16 py-12 md:py-20">
+      <section className="px-5 md:px-16 py-10 md:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Left */}
           <div>
@@ -76,7 +76,7 @@ export default function ContactPage() {
       </section>
 
       {/* ── FORM SECTION ── */}
-      <section className="bg-white px-4 md:px-16 py-12 md:py-20">
+      <section className="bg-white px-5 md:px-16 py-10 md:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Left — Form card */}
           <ContactForm />
@@ -147,7 +147,7 @@ export default function ContactPage() {
       </section>
 
       {/* ── MAP ── */}
-      <section className="px-4 md:px-16 pb-20">
+      <section className="px-5 md:px-16 pb-16">
         <div className="rounded-2xl overflow-hidden border-[1.5px] border-gold h-48 md:h-80">
           <iframe
             src="https://maps.google.com/maps?q=Pune,Maharashtra,India&output=embed"

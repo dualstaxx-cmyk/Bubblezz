@@ -17,8 +17,8 @@ export default function HomeContent() {
   return (
     <>
       {/* ── HERO ── */}
-      <section className="min-h-screen bg-cream flex items-center">
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 items-center px-6 md:px-16 gap-8 md:gap-16 py-20 md:py-0 min-h-screen">
+      <section className="bg-cream flex items-center md:min-h-screen">
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 items-center px-5 md:px-16 gap-6 md:gap-16 py-10 md:py-0 md:min-h-screen">
 
           {/* Left — editorial text */}
           <motion.div
@@ -50,7 +50,7 @@ export default function HomeContent() {
             </motion.p>
 
             {/* Social proof */}
-            <motion.div variants={fadeUp} className="flex items-center gap-3 mt-5">
+            <motion.div variants={fadeUp} className="flex items-center gap-2 mt-4">
               <div className="flex gap-0.5">
                 {[1, 2, 3, 4, 5].map((i) => (
                   <span key={i} className="text-gold text-xs">★</span>
@@ -61,7 +61,7 @@ export default function HomeContent() {
               </span>
             </motion.div>
 
-            <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4 mt-10">
+            <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-3 mt-8">
               <Link
                 href="/shop"
                 className="bg-brand-black text-white px-8 py-3.5 font-body font-medium text-xs tracking-widest uppercase hover:bg-gold hover:text-brand-black transition-colors duration-300 text-center"
@@ -82,9 +82,9 @@ export default function HomeContent() {
             variants={fadeUp}
             initial="hidden"
             animate="visible"
-            className="relative h-[300px] sm:h-[420px] md:h-[600px] order-1 md:order-2 rounded-[20px] bg-[#F5F0EA] p-3 md:p-5"
+            className="relative h-[320px] sm:h-[380px] md:h-[600px] order-1 md:order-2 rounded-[16px] md:rounded-[20px] bg-[#F5F0EA] p-2.5 md:p-5"
           >
-            <div className="relative h-full w-full rounded-[14px] overflow-hidden">
+            <div className="relative h-full w-full rounded-[12px] md:rounded-[14px] overflow-hidden">
               <Image
                 src="/hero-bottle.jpeg"
                 alt="Bubblezz Premium Botanical Serum — signature formula"
@@ -102,7 +102,7 @@ export default function HomeContent() {
       <TrustStrip />
 
       {/* ── CURATED COLLECTIONS ── */}
-      <section className="bg-cream py-20 md:py-28 px-6 md:px-16">
+      <section className="bg-cream py-14 md:py-28 px-5 md:px-16">
         <div className="flex flex-col gap-3 md:flex-row md:justify-between md:items-end mb-14">
           <div>
             <h2 className="font-display text-brand-black leading-tight text-[clamp(2rem,4vw,3.5rem)]">
@@ -145,8 +145,8 @@ export default function HomeContent() {
       </section>
 
       {/* ── THE GOLDEN ELIXIR (Dark Feature Spotlight) ── */}
-      <section className="bg-brand-black py-20 md:py-28 px-6 md:px-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
+      <section className="bg-brand-black py-14 md:py-28 px-5 md:px-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20 items-center">
           <motion.div
             variants={fadeUp}
             initial="hidden"
@@ -194,7 +194,7 @@ export default function HomeContent() {
       </section>
 
       {/* ── THE ICONS (Bestsellers) ── */}
-      <section className="bg-white py-20 md:py-28 px-6 md:px-16">
+      <section className="bg-white py-14 md:py-28 px-5 md:px-16">
         <motion.div
           variants={fadeUp}
           initial="hidden"
@@ -234,7 +234,7 @@ export default function HomeContent() {
       </section>
 
       {/* ── PRESS QUOTE ── */}
-      <section className="bg-cream-dark py-20 md:py-28 px-6 md:px-16">
+      <section className="bg-cream-dark py-14 md:py-28 px-5 md:px-16">
         <motion.div
           variants={fadeUp}
           initial="hidden"

@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 
 export default function FaqPage() {
   return (
-    <div className="bg-cream min-h-screen px-4 md:px-16 py-12 md:py-20">
+    <div className="bg-cream min-h-screen px-5 md:px-16 py-10 md:py-20">
       <div className="text-center">
         <p className="text-gold text-xs uppercase tracking-widest font-body font-semibold">
           Got Questions?

@@ -4,9 +4,9 @@ export default function PhilosophySection() {
   return (
     <section className="grid grid-cols-1 md:grid-cols-2 min-h-[250px] md:min-h-[400px]">
       {/* Left — dark */}
-      <div className="bg-brand-black p-8 md:p-16 flex flex-col justify-between min-h-[250px] md:min-h-[400px]">
+      <div className="bg-brand-black p-6 md:p-16 flex flex-col justify-between min-h-[220px] md:min-h-[400px]">
         <div>
-          <h2 className="font-display text-white text-3xl md:text-headline-lg font-bold leading-tight">
+          <h2 className="font-display text-white text-2xl md:text-headline-lg font-bold leading-tight">
             PURITY WITHOUT COMPROMISE
           </h2>
           <div className="w-16 h-0.5 bg-gold mt-6" />
@@ -15,7 +15,7 @@ export default function PhilosophySection() {
       </div>
 
       {/* Right — cream */}
-      <div className="bg-cream p-8 md:p-16 flex flex-col justify-center">
+      <div className="bg-cream p-6 md:p-16 flex flex-col justify-center">
         <p className="text-gold text-xs uppercase tracking-widest font-body font-semibold">
           Our Philosophy
         </p>

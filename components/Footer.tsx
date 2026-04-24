@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="bg-brand-black border-t border-gold">
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 px-4 md:px-16 py-10 md:py-16">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 px-5 md:px-16 py-10 md:py-16">
         {/* Col 1 — Brand */}
         <div className="col-span-2 md:col-span-1">
           <p className="font-display text-gold text-2xl font-bold">Bubblezz</p>
@@ -107,7 +107,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-gray-800 mt-0 pt-6 pb-6 px-4 md:px-16">
+      <div className="border-t border-gray-800 mt-0 pt-6 pb-6 px-5 md:px-16">
         <p className="text-gray-500 text-[10px] md:text-xs text-center font-body">
           © {new Date().getFullYear()} Bubblezz Personal Care. All Rights Reserved.
         </p>
